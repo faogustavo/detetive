@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">Detetive</string>
+
+    <string name="bullet_format">• %s</string>
+
+    <!-- TITLES -->
+    <string name="character_title">Characters</string>
+    <string name="place_title">Places</string>
+    <string name="weapon_title">Weapons</string>
+
+    <!-- CHARACTER -->
+    <string name="card_sergeant">Sargento</string>
+    <string name="card_florist">Florista</string>
+    <string name="card_chef">Chef</string>
+    <string name="card_butler">Mordomo</string>
+    <string name="card_doctor">Medica</string>
+    <string name="card_dancer">Dançarina</string>
+    <string name="card_gravedigger">Coveiro</string>
+    <string name="card_lawyer">Advogado</string>
+
+    <!-- PLACES -->
+    <string name="card_mansion">Mansão</string>
+    <string name="card_hospital">Hospital</string>
+    <string name="card_train_station">Estação de trem</string>
+    <string name="card_graveyard">Cemitário</string>
+    <string name="card_bank">Banco</string>
+    <string name="card_central_park">Praça central</string>
+    <string name="card_restaurant">Restaurant</string>
+    <string name="card_flower_shop">Floricultura</string>
+    <string name="card_city_hall">Prefeitura</string>
+    <string name="card_nightclub">Boate</string>
+    <string name="card_hotel">Hotel</string>
+
+    <!-- WEAPONS -->
+    <string name="card_crowbar">Pé de cabra</string>
+    <string name="card_knife">Faca</string>
+    <string name="card_scissors">Tesoura</string>
+    <string name="card_shotgun">Espingarda</string>
+    <string name="card_poison">Veneno</string>
+    <string name="card_chemical_weapon">Arma Química</string>
+    <string name="card_knuckle">Soco Inglês</string>
+    <string name="card_shovel">Pá</string>
 </resources>

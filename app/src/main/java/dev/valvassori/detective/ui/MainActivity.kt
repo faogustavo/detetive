@@ -1,7 +1,8 @@
-package dev.valvassori.detective
+package dev.valvassori.detective.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import dev.valvassori.detective.R
 import dev.valvassori.detective.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
