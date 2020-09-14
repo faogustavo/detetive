@@ -33,7 +33,7 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile ("proguard-android-optimize.txt"),
+                getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
@@ -47,12 +47,18 @@ dependencies {
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
     implementation(Libs.constraintLayout)
+
     implementation(Libs.lifecycle)
     implementation(Libs.viewModel)
+
+    implementation(Libs.hawk)
+
+    implementation(Libs.koinCore)
+    implementation(Libs.koinAndroid)
+    implementation(Libs.koinViewModel)
 
     testImplementation(Libs.junit)
 
     androidTestImplementation(Libs.androidJunit)
     androidTestImplementation(Libs.espresso)
-
 }
