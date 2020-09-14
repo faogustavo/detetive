@@ -43,16 +43,16 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
-    implementation("androidx.core:core-ktx:1.3.1")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.1")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation(Libs.kotlin)
+    implementation(Libs.coreKtx)
+    implementation(Libs.appcompat)
+    implementation(Libs.constraintLayout)
+    implementation(Libs.lifecycle)
+    implementation(Libs.viewModel)
 
-    testImplementation("junit:junit:4.12")
+    testImplementation(Libs.junit)
 
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    androidTestImplementation(Libs.androidJunit)
+    androidTestImplementation(Libs.espresso)
 
 }

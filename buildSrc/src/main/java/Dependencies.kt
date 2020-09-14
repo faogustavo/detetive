@@ -11,6 +11,16 @@ object ReleaseVersions {
 object Versions {
     const val kotlin = "1.4.10"
     const val agp = "4.0.1"
+
+    const val appcompat = "1.2.0"
+    const val coreKtx = "1.3.1"
+    const val constraintLayout = "2.0.1"
+    const val lifecycle = "2.2.0"
+
+    const val junit = "4.12"
+
+    const val androidJunit = "1.1.2"
+    const val espresso = "3.3.0"
 }
 
 object BuildDependencies {
@@ -19,5 +29,16 @@ object BuildDependencies {
 }
 
 object Libs {
+    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
+    const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
 
+    const val junit = "junit:junit:${Versions.junit}"
+
+    const val androidJunit = "androidx.test.ext:junit:${Versions.androidJunit}"
+    const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 }
