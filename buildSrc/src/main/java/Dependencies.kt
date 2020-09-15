@@ -10,7 +10,7 @@ object ReleaseVersions {
 
 object Versions {
     const val kotlin = "1.4.10"
-    const val agp = "4.0.1"
+    const val agp = "4.2.0-alpha10"
 
     const val appcompat = "1.2.0"
     const val coreKtx = "1.3.1"
@@ -26,8 +26,8 @@ object Versions {
 }
 
 object BuildDependencies {
-    val gradle = "com.android.tools.build:gradle:${Versions.agp}"
-    val kotlin = "gradle-plugin"
+    const val gradle = "com.android.tools.build:gradle:${Versions.agp}"
+    const val kotlin = "gradle-plugin"
 }
 
 object Libs {
@@ -51,4 +51,20 @@ object Libs {
 
     const val androidJunit = "androidx.test.ext:junit:${Versions.androidJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    object Compose {
+        const val version = "1.0.0-alpha02"
+
+        const val runtime = "androidx.compose.runtime:runtime:$version"
+        const val foundation = "androidx.compose.foundation:foundation:$version"
+        const val layout = "androidx.compose.foundation:foundation-layout:$version"
+
+        const val ui = "androidx.compose.ui:ui:$version"
+        const val material = "androidx.compose.material:material:$version"
+        const val materialIconsExtended =
+            "androidx.compose.material:material-icons-extended:$version"
+
+        const val tooling = "androidx.ui:ui-tooling:$version"
+        const val test = "androidx.ui:ui-test:$version"
+    }
 }

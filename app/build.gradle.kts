@@ -14,11 +14,6 @@ android {
         getByName("androidTest").java.srcDirs("src/androidTest/kotlin/")
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
     defaultConfig {
         minSdkVersion(ReleaseVersions.minSdk)
         targetSdkVersion(ReleaseVersions.sdk)
@@ -38,6 +33,32 @@ android {
             )
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion = Versions.kotlin
+        kotlinCompilerExtensionVersion = Libs.Compose.version
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs =
+            freeCompilerArgs + arrayOf("-Xallow-jvm-ir-dependencies", "-Xskip-prerelease-check")
+    }
 }
 
 dependencies {
@@ -56,6 +77,11 @@ dependencies {
     implementation(Libs.koinCore)
     implementation(Libs.koinAndroid)
     implementation(Libs.koinViewModel)
+
+    implementation(Libs.Compose.foundation)
+    implementation(Libs.Compose.material)
+    implementation(Libs.Compose.materialIconsExtended)
+    implementation(Libs.Compose.tooling)
 
     testImplementation(Libs.junit)
 
