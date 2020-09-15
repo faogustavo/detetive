@@ -48,7 +48,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion = Versions.kotlin
+        kotlinCompilerVersion = Libs.Kotlin.version
         kotlinCompilerExtensionVersion = Libs.Compose.version
     }
 }
@@ -64,27 +64,28 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java).conf
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(Libs.kotlin)
-    implementation(Libs.coreKtx)
-    implementation(Libs.appcompat)
-    implementation(Libs.constraintLayout)
+    implementation(Libs.Kotlin.lib)
 
-    implementation(Libs.lifecycle)
-    implementation(Libs.viewModel)
+    implementation(Libs.AndroidX.coreKtx)
+    implementation(Libs.AndroidX.appcompat)
+    implementation(Libs.AndroidX.constraintLayout)
 
-    implementation(Libs.hawk)
-
-    implementation(Libs.koinCore)
-    implementation(Libs.koinAndroid)
-    implementation(Libs.koinViewModel)
+    implementation(Libs.AndroidX.LifeCycle.core)
+    implementation(Libs.AndroidX.LifeCycle.viewModel)
 
     implementation(Libs.Compose.foundation)
     implementation(Libs.Compose.material)
     implementation(Libs.Compose.materialIconsExtended)
     implementation(Libs.Compose.tooling)
 
-    testImplementation(Libs.junit)
+    implementation(Libs.Koin.core)
+    implementation(Libs.Koin.android)
+    implementation(Libs.Koin.viewModel)
 
-    androidTestImplementation(Libs.androidJunit)
-    androidTestImplementation(Libs.espresso)
+    implementation(Libs.Hawk.lib)
+
+    testImplementation(Libs.Test.junit)
+
+    androidTestImplementation(Libs.Test.androidJunit)
+    androidTestImplementation(Libs.Test.espresso)
 }

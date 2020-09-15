@@ -8,49 +8,37 @@ object ReleaseVersions {
     const val appId = "dev.valvassori.detective"
 }
 
-object Versions {
-    const val kotlin = "1.4.10"
-    const val agp = "4.2.0-alpha10"
-
-    const val appcompat = "1.2.0"
-    const val coreKtx = "1.3.1"
-    const val constraintLayout = "2.0.1"
-    const val lifecycle = "2.2.0"
-    const val hawk = "2.0.1"
-    const val koin = "2.1.6"
-
-    const val junit = "4.12"
-
-    const val androidJunit = "1.1.2"
-    const val espresso = "3.3.0"
-}
-
 object BuildDependencies {
-    const val gradle = "com.android.tools.build:gradle:${Versions.agp}"
+    const val gradle = "com.android.tools.build:gradle:4.2.0-alpha10"
     const val kotlin = "gradle-plugin"
 }
 
 object Libs {
-    const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
-    const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
-    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
-    const val constraintLayout =
-        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+    object Kotlin {
+        const val version = "1.4.10"
+        const val lib = "org.jetbrains.kotlin:kotlin-stdlib:$version"
+    }
 
-    const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
-    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    object AndroidX {
+        const val coreKtx = "androidx.core:core-ktx:1.3.1"
+        const val appcompat = "androidx.appcompat:appcompat:1.2.0"
+        const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.1"
 
-    const val hawk = "com.orhanobut:hawk:${Versions.hawk}"
+        object LifeCycle {
+            const val version = "2.2.0"
 
-    const val koinCore = "org.koin:koin-core:${Versions.koin}"
-    const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
-    const val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
+            const val core = "androidx.lifecycle:lifecycle-extensions:$version"
+            const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+        }
+    }
 
-    // TEST
-    const val junit = "junit:junit:${Versions.junit}"
+    object Koin {
+        const val version = "2.1.6"
 
-    const val androidJunit = "androidx.test.ext:junit:${Versions.androidJunit}"
-    const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+        const val core = "org.koin:koin-core:$version"
+        const val android = "org.koin:koin-android:$version"
+        const val viewModel = "org.koin:koin-android-viewmodel:$version"
+    }
 
     object Compose {
         const val version = "1.0.0-alpha02"
@@ -66,5 +54,16 @@ object Libs {
 
         const val tooling = "androidx.ui:ui-tooling:$version"
         const val test = "androidx.ui:ui-test:$version"
+    }
+
+    object Hawk {
+        const val lib = "com.orhanobut:hawk:2.0.1"
+    }
+
+    object Test {
+        const val junit = "junit:junit:4.12"
+
+        const val androidJunit = "androidx.test.ext:junit:1.1.2"
+        const val espresso = "androidx.test.espresso:espresso-core:3.3.0"
     }
 }
