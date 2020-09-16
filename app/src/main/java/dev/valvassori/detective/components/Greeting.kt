@@ -18,11 +18,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import dev.valvassori.detective.R
+import dev.valvassori.detective.components.theme.DetectiveTheme
 
 @Composable
 fun Greeting() {
     val image = imageResource(id = R.drawable.header)
-    MaterialTheme {
+    DetectiveTheme {
         Scaffold {
             Column(
                 modifier = Modifier.padding(16.dp)

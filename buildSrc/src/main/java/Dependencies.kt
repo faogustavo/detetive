@@ -56,6 +56,13 @@ object Libs {
         const val test = "androidx.ui:ui-test:$version"
     }
 
+    object Navigation {
+        const val version = "2.3.0"
+
+        const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
+        const val ui = "androidx.navigation:navigation-ui-ktx:$version"
+    }
+
     object Hawk {
         const val lib = "com.orhanobut:hawk:2.0.1"
     }

@@ -78,6 +78,9 @@ dependencies {
     implementation(Libs.Compose.materialIconsExtended)
     implementation(Libs.Compose.tooling)
 
+    implementation(Libs.Navigation.fragment)
+    implementation(Libs.Navigation.ui)
+
     implementation(Libs.Koin.core)
     implementation(Libs.Koin.android)
     implementation(Libs.Koin.viewModel)

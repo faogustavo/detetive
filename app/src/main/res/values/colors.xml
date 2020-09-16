@@ -3,6 +3,7 @@
     <color name="colorPrimary">#322f3d</color>
     <color name="colorPrimaryDark">#092532</color>
     <color name="colorAccent">#fddb3a</color>
+    <color name="colorAccentDark">#E4BE07</color>
 
     <color name="location_unknown">#393e46</color>
     <color name="location_hand">#e84545</color>
