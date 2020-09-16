@@ -18,13 +18,18 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import dev.valvassori.detective.R
+import dev.valvassori.detective.components.core.DetectiveAppBar
 import dev.valvassori.detective.components.theme.DetectiveTheme
 
 @Composable
 fun Greeting() {
     val image = imageResource(id = R.drawable.header)
     DetectiveTheme {
-        Scaffold {
+        Scaffold(
+            topBar = {
+                DetectiveAppBar(showMenuButton = true)
+            }
+        ) {
             Column(
                 modifier = Modifier.padding(16.dp)
             ) {
