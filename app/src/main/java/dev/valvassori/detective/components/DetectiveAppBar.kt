@@ -1,4 +1,4 @@
-package dev.valvassori.detective.components.core
+package dev.valvassori.detective.components
 
 import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
@@ -30,6 +30,7 @@ fun DetectiveAppBar(
     title: String? = null,
     showBackButton: Boolean = false,
     showMenuButton: Boolean = false,
+    showDivider: Boolean = true,
     onBackPress: () -> Unit = {},
 ) {
     val appIcon: ComposableFn = {
@@ -67,7 +68,10 @@ fun DetectiveAppBar(
             },
             navigationIcon = appIcon.takeIf { showBackButton }
         )
-        Divider()
+
+        if (showDivider) {
+            Divider()
+        }
     }
 }
 
