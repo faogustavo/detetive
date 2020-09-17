@@ -16,6 +16,21 @@ data class GameCard(
     val type: Type
         get() = card.type
 
+    val prettyDescription: String
+        get() = description?.let { "• $it" }.orEmpty()
+
+    val hasDescription: Boolean
+        get() = description != null
+
+    val hasColor: Boolean
+        get() = color != null
+
+    val locationColor: Int
+        get() = location.color
+
+    val locationText: Int
+        get() = location.text
+
     fun areItemsTheSame(other: GameCard): Boolean =
         card == other.card
 

@@ -8,6 +8,13 @@
     <string name="place_title">Locais</string>
     <string name="weapon_title">Armas</string>
 
+    <!-- CAPTIONS -->
+    <string name="caption_location_hand">M</string>
+    <string name="caption_location_envelop">E</string>
+    <string name="caption_location_maybe_hand">TM</string>
+    <string name="caption_location_maybe_envelop">TE</string>
+    <string name="caption_location_unknown"> </string>
+
     <!-- CHARACTER -->
     <string name="card_sergeant">Sargento</string>
     <string name="card_florist">Florista</string>
