@@ -10,12 +10,16 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Tab
 import androidx.compose.material.TabConstants.defaultTabIndicatorOffset
+import androidx.compose.material.TabPosition
 import androidx.compose.material.TabRow
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.ui.tooling.preview.Preview
+import dev.valvassori.detective.components.ext.TypedComposableFn
+import dev.valvassori.detective.components.theme.DetectiveTheme
 import dev.valvassori.detective.domain.model.Type
 
 @Composable
@@ -26,20 +30,28 @@ fun DetectiveTabBar(
 ) {
     val types = listOf(Type.CHARACTER, Type.PLACE, Type.WEAPON)
     val selectedIndex = types.indexOf(selectedTab)
+
+    val indicator: TypedComposableFn<List<TabPosition>> = { tabPositions ->
+        DetectiveTabBarIndicator(
+            Modifier.defaultTabIndicatorOffset(tabPositions[selectedIndex])
+        )
+    }
+
     TabRow(
         selectedTabIndex = selectedIndex,
         modifier = modifier,
-        indicator = { tabPositions ->
-            DetectiveTabBarIndicator(
-                Modifier.defaultTabIndicatorOffset(tabPositions[selectedIndex])
-            )
-        }
+        indicator = indicator,
     ) {
         types.forEachIndexed { index, type ->
             Tab(
                 selected = index == selectedIndex,
                 onClick = { onTabSelected(type) },
-                text = { Text(text = stringResource(id = type.title).toUpperCase()) }
+                text = {
+                    Text(
+                        text = stringResource(id = type.title),
+                        maxLines = 1
+                    )
+                }
             )
         }
     }
@@ -58,4 +70,15 @@ fun DetectiveTabBarIndicator(
                 RoundedCornerShape(topLeftPercent = 25, topRightPercent = 25)
             )
     )
+}
+
+@Composable
+@Preview
+fun PreviewDetectiveTabBar() {
+    DetectiveTheme {
+        DetectiveTabBar(
+            selectedTab = Type.CHARACTER,
+            onTabSelected = {}
+        )
+    }
 }
