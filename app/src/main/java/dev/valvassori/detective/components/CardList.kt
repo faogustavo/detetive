@@ -166,8 +166,8 @@ fun PreviewCardItemWithoutDescription() {
     DetectiveTheme {
         CardItem(
             card = GameCard(
-                Location.HAND,
-                card = Card.GRAVEDIGGER,
+                Location.UNKNOWN,
+                card = Card.FLORIST,
             )
         )
     }
@@ -179,7 +179,7 @@ fun PreviewCardItemWithoutColor() {
     DetectiveTheme {
         CardItem(
             card = GameCard(
-                Location.HAND,
+                Location.MAYBE_ENVELOP,
                 description = "Gustavo",
                 card = Card.HOTEL,
             )
