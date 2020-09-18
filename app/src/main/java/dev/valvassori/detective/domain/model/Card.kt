@@ -12,7 +12,7 @@ enum class Card(
     // Characters
     SERGEANT(R.string.card_sergeant, R.color.card_sergeant, Type.CHARACTER),
     FLORIST(R.string.card_florist, R.color.card_florist, Type.CHARACTER),
-    CHEF(R.string.card_sergeant, R.color.card_sergeant, Type.CHARACTER),
+    CHEF(R.string.card_chef, R.color.card_chef, Type.CHARACTER),
     BUTLER(R.string.card_butler, R.color.card_butler, Type.CHARACTER),
     DOCTOR(R.string.card_doctor, R.color.card_doctor, Type.CHARACTER),
     DANCER(R.string.card_dancer, R.color.card_dancer, Type.CHARACTER),
