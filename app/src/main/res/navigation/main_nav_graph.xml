@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="dev.valvassori.detective.ui.main.MainFragment"
+        android:name="dev.valvassori.detetive.ui.main.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" />
 </navigation>
