@@ -11,6 +11,8 @@ object ReleaseVersions {
 object BuildDependencies {
     const val gradle = "com.android.tools.build:gradle:4.2.0-alpha11"
     const val kotlin = "gradle-plugin"
+    const val safeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${Libs.Navigation.version}"
 }
 
 object Libs {

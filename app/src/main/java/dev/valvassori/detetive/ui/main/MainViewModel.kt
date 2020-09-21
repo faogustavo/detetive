@@ -21,9 +21,13 @@ class MainViewModel constructor(
 
     private val _selectedTab = MutableStateFlow(Type.CHARACTER)
     private val _state = MutableStateFlow(MainViewState())
+    private val _action: MutableStateFlow<MainAction?> = MutableStateFlow(null)
 
     val state: StateFlow<MainViewState>
         get() = _state
+
+    val action: MutableStateFlow<MainAction?>
+        get() = _action
 
     init {
         viewModelScope.launch(dispatcherProvider.default) {
@@ -50,6 +54,6 @@ class MainViewModel constructor(
     }
 
     private fun actionEditCard(card: GameCard) {
-        // TODO: Dispatch action to view open a dialog and update the card
+        _action.value = MainAction.EditCard(card.card)
     }
 }

@@ -9,5 +9,17 @@
         android:id="@+id/mainFragment"
         android:name="dev.valvassori.detetive.ui.main.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_editCardDialog"
+            app:destination="@id/editCardDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/editCardDialog"
+        android:name="dev.valvassori.detetive.ui.edit.EditCardDialog"
+        android:label="EditCardDialog">
+        <argument
+            android:name="card"
+            app:argType="dev.valvassori.detetive.domain.model.Card" />
+    </dialog>
 </navigation>
