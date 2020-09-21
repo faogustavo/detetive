@@ -5,46 +5,57 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.imageResource
 import androidx.ui.tooling.preview.Preview
-import dev.valvassori.detetive.R
 import dev.valvassori.detetive.components.CardList
 import dev.valvassori.detetive.components.DetectiveAppBar
 import dev.valvassori.detetive.components.DetectiveTabBar
 import dev.valvassori.detetive.components.theme.DetectiveTheme
-import dev.valvassori.detetive.domain.factory.GameCardFactory
+import dev.valvassori.detetive.core.ext.func.Callback1
+import dev.valvassori.detetive.domain.model.GameCard
 import dev.valvassori.detetive.domain.model.Type
+import dev.valvassori.detetive.ui.main.MainViewAction
+import dev.valvassori.detetive.ui.main.MainViewModel
 
 @Composable
-fun MainContainer() {
-    val image = imageResource(id = R.drawable.header)
+fun MainContainer(viewModel: MainViewModel) = DetectiveTheme {
+    val viewState by viewModel.state.collectAsState()
+    MainContent(
+        selectedTab = viewState.selectedTab,
+        cards = viewState.cards,
+        setTab = { viewModel.dispatch(MainViewAction.ChangeTab(it)) },
+        onCardClick = { viewModel.dispatch(MainViewAction.EditCard(it)) }
+    )
+}
 
-    val (selectedTab, setTab) = remember { mutableStateOf(Type.CHARACTER) }
-    val data = remember { GameCardFactory.make().groupBy { it.type } }
-
-    DetectiveTheme {
-        Scaffold(
-            topBar = {
-                Column(Modifier.fillMaxWidth()) {
-                    DetectiveAppBar(
-                        showMenuButton = true,
-                        showDivider = false
-                    )
-                    DetectiveTabBar(
-                        selectedTab = selectedTab,
-                        onTabSelected = setTab
-                    )
-                }
-            },
-        ) {
-            Crossfade(current = selectedTab) {
-                CardList(
-                    cards = data[it].orEmpty()
+@Composable
+fun MainContent(
+    selectedTab: Type = Type.CHARACTER,
+    cards: List<GameCard> = emptyList(),
+    setTab: Callback1<Type> = {},
+    onCardClick: Callback1<GameCard> = {},
+) {
+    Scaffold(
+        topBar = {
+            Column(Modifier.fillMaxWidth()) {
+                DetectiveAppBar(
+                    showMenuButton = true,
+                    showDivider = false
+                )
+                DetectiveTabBar(
+                    selectedTab = selectedTab,
+                    onTabSelected = setTab
                 )
             }
+        },
+    ) {
+        Crossfade(current = selectedTab) {
+            CardList(
+                cards = cards,
+                onCardClick = onCardClick
+            )
         }
     }
 }
@@ -52,5 +63,7 @@ fun MainContainer() {
 @Preview
 @Composable
 fun PreviewGreeting() {
-    MainContainer()
+    DetectiveTheme {
+        MainContent()
+    }
 }

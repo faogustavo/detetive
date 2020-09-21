@@ -9,7 +9,7 @@ object ReleaseVersions {
 }
 
 object BuildDependencies {
-    const val gradle = "com.android.tools.build:gradle:4.2.0-alpha10"
+    const val gradle = "com.android.tools.build:gradle:4.2.0-alpha11"
     const val kotlin = "gradle-plugin"
 }
 
@@ -41,7 +41,7 @@ object Libs {
     }
 
     object Compose {
-        const val version = "1.0.0-alpha02"
+        const val version = "1.0.0-alpha03"
 
         const val runtime = "androidx.compose.runtime:runtime:$version"
         const val foundation = "androidx.compose.foundation:foundation:$version"
@@ -69,6 +69,7 @@ object Libs {
 
     object Test {
         const val junit = "junit:junit:4.12"
+        const val mockk = "io.mockk:mockk:1.10.0"
 
         const val androidJunit = "androidx.test.ext:junit:1.1.2"
         const val espresso = "androidx.test.espresso:espresso-core:3.3.0"

@@ -4,8 +4,7 @@ import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.RowScope.gravity
+import androidx.compose.foundation.layout.RowScope.align
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.material.Divider
@@ -25,9 +24,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import dev.valvassori.detetive.R
-import dev.valvassori.detetive.components.ext.ComposableFn
-import dev.valvassori.detetive.components.ext.ComposableRowFn
 import dev.valvassori.detetive.components.theme.DetectiveTheme
+import dev.valvassori.detetive.core.ext.compose.ComposableFn
+import dev.valvassori.detetive.core.ext.compose.ComposableRowFn
 
 @Composable
 fun DetectiveAppBar(
@@ -86,16 +85,16 @@ fun BackButton(onClick: () -> Unit) {
     Icon(
         asset = Icons.Outlined.ArrowBack,
         modifier = Modifier
-            .gravity(Alignment.CenterVertically)
+            .align(Alignment.CenterVertically)
             .clickable(onClick = onClick)
             .padding(16.dp)
     )
 }
 
 @Composable
-fun RowScope.AppBarMenu(
+fun AppBarMenu(
     showMenuButton: Boolean = false,
-    onNewGame: () -> Unit
+    onNewGame: () -> Unit,
 ) {
     if (showMenuButton) {
         val (isMenuOpen, setMenuState) = remember { mutableStateOf(false) }

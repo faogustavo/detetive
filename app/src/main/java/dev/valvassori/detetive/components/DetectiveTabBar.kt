@@ -2,7 +2,7 @@ package dev.valvassori.detetive.components
 
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.ColumnScope.gravity
+import androidx.compose.foundation.layout.ColumnScope.align
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.layout.preferredWidth
@@ -18,14 +18,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import dev.valvassori.detetive.components.ext.TypedComposableFn
 import dev.valvassori.detetive.components.theme.DetectiveTheme
+import dev.valvassori.detetive.core.ext.compose.TypedComposableFn
+import dev.valvassori.detetive.core.ext.func.Callback1
 import dev.valvassori.detetive.domain.model.Type
 
 @Composable
 fun DetectiveTabBar(
     selectedTab: Type,
-    onTabSelected: (Type) -> Unit,
+    onTabSelected: Callback1<Type>,
     modifier: Modifier = Modifier,
 ) {
     val types = listOf(Type.CHARACTER, Type.PLACE, Type.WEAPON)
@@ -64,7 +65,7 @@ fun DetectiveTabBarIndicator(
     Spacer(
         modifier.preferredWidth(112.dp)
             .preferredHeight(4.dp)
-            .gravity(Alignment.CenterHorizontally)
+            .align(Alignment.CenterHorizontally)
             .background(
                 MaterialTheme.colors.secondary,
                 RoundedCornerShape(topLeftPercent = 25, topRightPercent = 25)

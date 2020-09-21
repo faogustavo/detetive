@@ -11,6 +11,6 @@ class MainFragment : ComposableFragment() {
 
     @Composable
     override fun render() {
-        MainContainer()
+        MainContainer(mainViewModel)
     }
 }

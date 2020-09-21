@@ -1,4 +1,4 @@
-package dev.valvassori.detetive.components.ext
+package dev.valvassori.detetive.core.ext.compose
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier

@@ -56,8 +56,14 @@ android {
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java).configureEach {
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs =
-            freeCompilerArgs + arrayOf("-Xallow-jvm-ir-dependencies", "-Xskip-prerelease-check")
+        freeCompilerArgs = freeCompilerArgs + arrayOf(
+            "-Xallow-jvm-ir-dependencies",
+            "-Xopt-in=kotlin.RequiresOptIn",
+            "-Xopt-in=kotlin.OptIn",
+            "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-Xopt-in=kotlinx.coroutines.FlowPreview",
+            "-Xopt-in=kotlin.Experimental"
+        )
     }
 }
 
@@ -88,6 +94,7 @@ dependencies {
     implementation(Libs.Hawk.lib)
 
     testImplementation(Libs.Test.junit)
+    testImplementation(Libs.Test.mockk)
 
     androidTestImplementation(Libs.Test.androidJunit)
     androidTestImplementation(Libs.Test.espresso)

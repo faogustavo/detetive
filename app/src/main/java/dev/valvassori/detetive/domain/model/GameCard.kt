@@ -30,10 +30,4 @@ data class GameCard(
 
     val locationText: Int
         get() = location.text
-
-    fun areItemsTheSame(other: GameCard): Boolean =
-        card == other.card
-
-    fun areContentSame(other: GameCard): Boolean =
-        card == other.card && location == other.location && description == other.description
 }

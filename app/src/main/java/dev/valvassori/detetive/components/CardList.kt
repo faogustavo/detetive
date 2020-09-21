@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import dev.valvassori.detetive.components.theme.DetectiveTheme
+import dev.valvassori.detetive.core.ext.func.Callback1
 import dev.valvassori.detetive.domain.model.Card
 import dev.valvassori.detetive.domain.model.GameCard
 import dev.valvassori.detetive.domain.model.Location
@@ -29,7 +30,7 @@ import dev.valvassori.detetive.domain.model.Location
 @Composable
 fun CardList(
     cards: List<GameCard>,
-    onCardClick: (GameCard) -> Unit = {},
+    onCardClick: Callback1<GameCard> = {},
 ) {
     LazyColumnFor(
         items = cards
@@ -39,7 +40,7 @@ fun CardList(
 @Composable
 fun CardItem(
     card: GameCard,
-    onCardClick: (GameCard) -> Unit = {},
+    onCardClick: Callback1<GameCard> = {},
 ) {
     ConstraintLayout(
         modifier = Modifier
