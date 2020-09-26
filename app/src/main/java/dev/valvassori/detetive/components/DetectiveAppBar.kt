@@ -27,6 +27,7 @@ import dev.valvassori.detetive.R
 import dev.valvassori.detetive.components.theme.DetectiveTheme
 import dev.valvassori.detetive.core.ext.compose.ComposableFn
 import dev.valvassori.detetive.core.ext.compose.ComposableRowFn
+import dev.valvassori.detetive.core.ext.func.Callback0
 
 @Composable
 fun DetectiveAppBar(
@@ -35,8 +36,8 @@ fun DetectiveAppBar(
     showBackButton: Boolean = false,
     showMenuButton: Boolean = false,
     showDivider: Boolean = true,
-    onBackPress: () -> Unit = {},
-    onNewGame: () -> Unit = {}
+    onBackPress: Callback0 = {},
+    onNewGame: Callback0 = {},
 ) {
     val backButtonView: ComposableFn = { BackButton(onClick = onBackPress) }
 

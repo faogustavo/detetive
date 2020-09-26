@@ -9,10 +9,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.ui.tooling.preview.Preview
-import dev.valvassori.detetive.components.CardList
 import dev.valvassori.detetive.components.DetectiveAppBar
 import dev.valvassori.detetive.components.DetectiveTabBar
+import dev.valvassori.detetive.components.card.CardList
 import dev.valvassori.detetive.components.theme.DetectiveTheme
+import dev.valvassori.detetive.core.ext.func.Callback0
 import dev.valvassori.detetive.core.ext.func.Callback1
 import dev.valvassori.detetive.domain.model.GameCard
 import dev.valvassori.detetive.domain.model.Type
@@ -26,7 +27,8 @@ fun MainContainer(viewModel: MainViewModel) = DetectiveTheme {
         selectedTab = viewState.selectedTab,
         cards = viewState.cards,
         setTab = { viewModel.dispatch(MainViewAction.ChangeTab(it)) },
-        onCardClick = { viewModel.dispatch(MainViewAction.EditCard(it)) }
+        onCardClick = { viewModel.dispatch(MainViewAction.EditCard(it)) },
+        onNewGame = { viewModel.dispatch(MainViewAction.NewGame) }
     )
 }
 
@@ -36,13 +38,15 @@ fun MainContent(
     cards: List<GameCard> = emptyList(),
     setTab: Callback1<Type> = {},
     onCardClick: Callback1<GameCard> = {},
+    onNewGame: Callback0 = {},
 ) {
     Scaffold(
         topBar = {
             Column(Modifier.fillMaxWidth()) {
                 DetectiveAppBar(
                     showMenuButton = true,
-                    showDivider = false
+                    showDivider = false,
+                    onNewGame = onNewGame
                 )
                 DetectiveTabBar(
                     selectedTab = selectedTab,

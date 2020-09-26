@@ -119,7 +119,7 @@ class GameCardTest {
         val subject = GameCardTestFactory.randomCard()
 
         val result = subject.locationText
-        val expectedResult = subject.location.text
+        val expectedResult = subject.location.shortText
 
         assertEquals(expectedResult, result)
     }

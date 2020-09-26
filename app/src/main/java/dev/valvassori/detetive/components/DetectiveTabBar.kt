@@ -25,9 +25,9 @@ import dev.valvassori.detetive.domain.model.Type
 
 @Composable
 fun DetectiveTabBar(
+    modifier: Modifier = Modifier,
     selectedTab: Type,
     onTabSelected: Callback1<Type>,
-    modifier: Modifier = Modifier,
 ) {
     val types = listOf(Type.CHARACTER, Type.PLACE, Type.WEAPON)
     val selectedIndex = types.indexOf(selectedTab)

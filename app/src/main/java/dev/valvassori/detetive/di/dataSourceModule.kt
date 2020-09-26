@@ -8,5 +8,5 @@ import org.koin.dsl.module
 
 @ExperimentalCoroutinesApi
 val dataSourceModule = module {
-    factory<CardDataSource> { CardsLocalDataSource(get(named(CacheNames.CARDS))) }
+    single<CardDataSource> { CardsLocalDataSource(get(named(CacheNames.CARDS))) }
 }

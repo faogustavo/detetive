@@ -40,12 +40,23 @@ class MainViewModel constructor(
     fun dispatch(action: MainViewAction) {
         when (action) {
             is MainViewAction.NewGame -> actionNewGame()
+            is MainViewAction.ConfirmNewGame -> actionConfirmNewGame()
             is MainViewAction.ChangeTab -> actionChangeTab(action.newTab)
             is MainViewAction.EditCard -> actionEditCard(action.card)
         }
     }
 
+    fun onActionHandled(action: MainAction?) {
+        if (action != null && _action.value == action) {
+            _action.value = null
+        }
+    }
+
     private fun actionNewGame() {
+        _action.value = MainAction.ConfirmNewGame
+    }
+
+    private fun actionConfirmNewGame() {
         newGame()
     }
 

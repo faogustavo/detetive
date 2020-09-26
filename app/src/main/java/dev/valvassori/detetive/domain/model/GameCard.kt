@@ -29,5 +29,5 @@ data class GameCard(
         get() = location.color
 
     val locationText: Int
-        get() = location.text
+        get() = location.shortText
 }

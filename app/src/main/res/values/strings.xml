@@ -3,17 +3,32 @@
 
     <string name="bullet_format">• %s</string>
 
+    <string name="new_game_dialog_title">Iniciar novo jogo</string>
+    <string name="new_game_dialog_description">Ao confirmar, o progresso dessa partida será perdido</string>
+    <string name="new_game_dialog_positive">Confirmar</string>
+    <string name="new_game_dialog_negative">Cancelar</string>
+
+    <string name="edit_dialog_title_format">Edição da carta %s</string>
+    <string name="edit_dialog_location_title">Localização</string>
+    <string name="edit_dialog_location_observation">Observação</string>
+
     <!-- TITLES -->
     <string name="character_title">Personagens</string>
     <string name="place_title">Locais</string>
     <string name="weapon_title">Armas</string>
 
     <!-- CAPTIONS -->
-    <string name="caption_location_hand">M</string>
-    <string name="caption_location_envelop">E</string>
-    <string name="caption_location_maybe_hand">TM</string>
-    <string name="caption_location_maybe_envelop">TE</string>
-    <string name="caption_location_unknown"> </string>
+    <string name="caption_location_hand_short">M</string>
+    <string name="caption_location_envelop_short">E</string>
+    <string name="caption_location_maybe_hand_short">TM</string>
+    <string name="caption_location_maybe_envelop_short">TE</string>
+    <string name="caption_location_unknown_short"> </string>
+
+    <string name="caption_location_hand">Mão</string>
+    <string name="caption_location_envelop">Envelope</string>
+    <string name="caption_location_maybe_hand">Mão (talvez)</string>
+    <string name="caption_location_maybe_envelop">Envelope (talvez)</string>
+    <string name="caption_location_unknown">Desconhecida</string>
 
     <!-- CHARACTER -->
     <string name="card_sergeant">Sargento</string>

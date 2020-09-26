@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="dev.valvassori.detetive.App">
-        <activity android:name="dev.valvassori.detetive.ui.MainActivity">
+        <activity
+            android:name="dev.valvassori.detetive.ui.MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

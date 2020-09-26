@@ -5,6 +5,7 @@ import dev.valvassori.detetive.domain.model.Type
 
 sealed class MainViewAction {
     object NewGame : MainViewAction()
+    object ConfirmNewGame : MainViewAction()
     class ChangeTab(val newTab: Type) : MainViewAction()
     class EditCard(val card: GameCard) : MainViewAction()
 }

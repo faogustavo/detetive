@@ -1,26 +1,20 @@
-package dev.valvassori.detetive.components
+package dev.valvassori.detetive.components.card
 
-import androidx.compose.foundation.Box
-import androidx.compose.foundation.ContentGravity
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.ConstraintLayout
 import androidx.compose.foundation.layout.Dimension
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.preferredSize
 import androidx.compose.foundation.lazy.LazyColumnFor
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import dev.valvassori.detetive.components.shapes.Circle
+import dev.valvassori.detetive.components.shapes.RoundedCornerSquare
 import dev.valvassori.detetive.components.theme.DetectiveTheme
 import dev.valvassori.detetive.core.ext.func.Callback1
 import dev.valvassori.detetive.domain.model.Card
@@ -116,41 +110,6 @@ fun CardItem(
             }
         )
     }
-}
-
-@Composable
-fun Circle(
-    color: Color,
-    size: Dp = 24.dp,
-    modifier: Modifier = Modifier,
-) {
-    Box(
-        modifier = modifier.preferredSize(size),
-        backgroundColor = color,
-        shape = CircleShape
-    )
-}
-
-@Composable
-fun RoundedCornerSquare(
-    color: Color,
-    size: Dp = 24.dp,
-    cornerSize: Dp = 4.dp,
-    modifier: Modifier = Modifier,
-    text: String = ""
-) {
-    Box(
-        modifier = modifier.preferredSize(size),
-        backgroundColor = color,
-        shape = RoundedCornerShape(cornerSize),
-        gravity = ContentGravity.Center,
-        children = {
-            Text(
-                text = text,
-                style = MaterialTheme.typography.caption,
-            )
-        }
-    )
 }
 
 @Preview
