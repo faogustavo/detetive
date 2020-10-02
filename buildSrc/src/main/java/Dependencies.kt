@@ -9,7 +9,7 @@ object ReleaseVersions {
 }
 
 object BuildDependencies {
-    const val gradle = "com.android.tools.build:gradle:4.2.0-alpha12"
+    const val gradle = "com.android.tools.build:gradle:4.2.0-alpha13"
     const val kotlin = "gradle-plugin"
     const val safeArgs =
         "androidx.navigation:navigation-safe-args-gradle-plugin:${Libs.Navigation.version}"
@@ -43,7 +43,7 @@ object Libs {
     }
 
     object Compose {
-        const val version = "1.0.0-alpha03"
+        const val version = "1.0.0-alpha04"
 
         const val runtime = "androidx.compose.runtime:runtime:$version"
         const val foundation = "androidx.compose.foundation:foundation:$version"

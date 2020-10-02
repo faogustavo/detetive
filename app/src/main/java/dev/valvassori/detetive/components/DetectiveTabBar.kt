@@ -2,7 +2,6 @@ package dev.valvassori.detetive.components
 
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.ColumnScope.align
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.preferredHeight
 import androidx.compose.foundation.layout.preferredWidth
@@ -13,7 +12,6 @@ import androidx.compose.material.TabConstants.defaultTabIndicatorOffset
 import androidx.compose.material.TabPosition
 import androidx.compose.material.TabRow
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -65,7 +63,6 @@ fun DetectiveTabBarIndicator(
     Spacer(
         modifier.preferredWidth(112.dp)
             .preferredHeight(4.dp)
-            .align(Alignment.CenterHorizontally)
             .background(
                 MaterialTheme.colors.secondary,
                 RoundedCornerShape(topLeftPercent = 25, topRightPercent = 25)
